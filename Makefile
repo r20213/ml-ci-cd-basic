@@ -28,8 +28,8 @@ hf-login:
 	huggingface-cli login --token $(HF) --add-to-git-credential
 
 push-hub:
-	huggingface-cli upload r20213/ml-ci-cd-basic.git ./App --repo-type=space --commit-message="Sync App files"
-	huggingface-cli upload r20213/ml-ci-cd-basic.git ./Model /Model --repo-type=space --commit-message="Sync Model"
-	huggingface-cli upload r20213/ml-ci-cd-basic.git ./Results /Metrics --repo-type=space --commit-message="Sync Metrics"
+	huggingface-cli upload r20213/ml-ci-cd-basic ./App --repo-type=space --commit-message="Sync App files"
+	huggingface-cli upload r20213/ml-ci-cd-basic ./Model /Model --repo-type=space --commit-message="Sync Model"
+	huggingface-cli upload r20213/ml-ci-cd-basic ./Results /Metrics --repo-type=space --commit-message="Sync Metrics"
 
 deploy: hf-login push-hub
